@@ -17,11 +17,11 @@ sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 apt-get update
 
-# Instala PostgreSQL e PostGIS
-if [ "$POSTGIS_VERSION" = "latest" ] || [ "$POSTGIS_VERSION" = "" ]; then
-    apt-get install -y postgis
+# Instala PostGIS e pgRouting
+if [ "$POSTGIS_VERSION" = "latest" ] ||  [ "$PG_VERSION" = "latest" ] || [ "$POSTGIS_VERSION" = "" ]; then
+    apt-get install -y postgresql-17-postgis-3
 else
-    apt-get install -y postgis="$POSTGIS_VERSION"*
+    apt-get install -y postgresql-"$PG_VERSION"-postgis-"$POSTGIS_VERSION"*
 fi
 
 # Instala ferramentas de linha de comando se solicitado
