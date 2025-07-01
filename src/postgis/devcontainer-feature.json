@@ -1,0 +1,39 @@
+{
+    "name": "Postgis",
+    "id": "postgis",
+    "version": "1.0.0",
+    "description": "PostGIS extends the capabilities of the PostgreSQL relational database by adding support for storing, indexing, and querying geospatial data.",
+    "options": {
+        "pgVersion": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "16",
+                "15",
+                "14",
+                "13"
+            ],
+            "default": "latest",
+            "description": "Choose the PostgreSQL version you have installed. This is used to install the correct PostGIS version and command line tools."
+        },
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest",
+                "3",
+                "2",
+                "1"
+            ],
+            "default": "latest",
+            "description": "Choose the PostGIS version to install. "
+        },
+        "installTools": {
+            "type": "boolean",
+            "default": true,
+            "description": "Install PostGIS commandline tools shp2pgsql, raster2pgsql."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
