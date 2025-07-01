@@ -26,7 +26,7 @@ fi
 
 # Instala ferramentas de linha de comando se solicitado
 if [ "$INSTALL_TOOLS" = "true" ]; then
-    apt-get install -y postgis
+    apt-get install -y postgis gdal-bin libgdal-dev
     echo "Ferramentas de linha de comando instaladas."
 fi
 
