@@ -4,6 +4,7 @@
         "features": {
            "postgis": {
                 "version": "latest",
+                "pgVersion": "latest",
                 "installTools": true
             }
         }
